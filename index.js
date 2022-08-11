@@ -6,7 +6,7 @@ canvas.height = 576;
 
 c.fillRect(0, 0, canvas.width, canvas.height);
 
-const gravity = 0.2;
+const gravity = 0.7;
 
 class Sprite {
   constructor({ position, velocity }) {
@@ -112,7 +112,7 @@ window.addEventListener("keydown", (event) => {
       player.lastKey = "a";
       break;
     case "w":
-      player.velocity.y = -10;
+      player.velocity.y = -20;
       break;
 
     case "ArrowRight":
@@ -124,7 +124,7 @@ window.addEventListener("keydown", (event) => {
       enemy.lastKey = "ArrowLeft";
       break;
     case "ArrowUp":
-      enemy.velocity.y = -10;
+      enemy.velocity.y = -20;
       break;
   }
   console.log(event.key);
