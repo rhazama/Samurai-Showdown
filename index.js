@@ -158,7 +158,7 @@ function animate() {
     player.isAttacking
   ) {
     player.isAttacking = false;
-    console.log("go");
+    console.log("player attack successful");
   }
 
   if (
@@ -205,7 +205,7 @@ window.addEventListener("keydown", (event) => {
       enemy.velocity.y = -20;
       break;
     case "ArrowDown":
-      enemy.isAttacking = true;
+      enemy.attack();
       break;
   }
   console.log(event.key);
