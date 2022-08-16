@@ -125,6 +125,19 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
   );
 }
 
+let timer = 100;
+function decreaseTimer() {
+  setTimeout(decreaseTimer, 1000)
+  if (timer > 0) {
+    timer--
+    document.querySelector('#timer').inerHTML = timer
+  }
+
+  if (playerHealth === enemy.health) {
+    console.log('tie')
+  }
+}
+
 function animate() {
   window.requestAnimationFrame(animate);
   c.fillStyle = "black";
@@ -153,12 +166,13 @@ function animate() {
   if (
     rectangularCollision({
       rectangle1: player,
-      rectangle2: enemy
+      rectangle2: enemy,
     }) &&
     player.isAttacking
   ) {
     player.isAttacking = false;
-    document.querySelector('#enemyHealth').style.width = '20'
+    enemy.health -= 20;
+    document.querySelector("#enemyHealth").style.width = enemy.health + "%";
   }
 
   if (
@@ -169,7 +183,8 @@ function animate() {
     enemy.isAttacking
   ) {
     enemy.isAttacking = false;
-    console.log("enemy attack successful");
+    player.heatlh -= 20;
+    document.querySelector("#playerHealth").style.width = player.health + "%";
   }
 }
 
