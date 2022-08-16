@@ -125,16 +125,24 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
   );
 }
 
-let timer = 100;
+let timer = 5;
 function decreaseTimer() {
-  setTimeout(decreaseTimer, 1000)
   if (timer > 0) {
-    timer--
-    document.querySelector('#timer').inerHTML = timer
+    setTimeout(decreaseTimer, 1000)
+    timer--;
+    document.querySelector('#timer').inerHTML = timer;
   }
 
-  if (playerHealth === enemy.health) {
-    console.log('tie')
+  if (timer === 0) {
+    document.querySelector('#timer').style.display = 'flex';
+      
+    if (playerHealth === enemy.health) {
+        document.querySelector('#displayText').innerHTML = 'Tie';
+      } else if (player.health > enemy.health) {
+        document.querySelector('#displayText').innerHTML = 'Player 1 Wins';
+      } else if (enemy.health > player.health) {
+        document.querySelector('#displayText').innerHTML = 'Player 2 Wins';
+      }
   }
 }
 
