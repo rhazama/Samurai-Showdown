@@ -110,14 +110,18 @@ function animate() {
   enemy.velocity.x = 0;
 
   // player movement
-  player.image = player.sprites.idle.image;
-
+  player.switchSprite('idle')
   if (keys.a.pressed && player.lastKey === "a") {
     player.velocity.x = -5;
     player.image = player.sprites.run.image;
   } else if (keys.d.pressed && player.lastKey === "d") {
     player.velocity.x = 5;
     player.image = player.sprites.run.image;
+  }
+
+  if (player.velocity.y < 0) {
+    player.image = player.sprites.jump.image;
+    player.framesMax = player.sprites.jump.framesMax;
   }
 
   // enemy movement
