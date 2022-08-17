@@ -1,4 +1,18 @@
-class Sprite {
+  class Sprite {
+    constructor({ position }) {
+      this.position = position;
+      this.width = 50;
+      this.height = 150;
+    }
+  
+    draw() {}
+  
+    update() {
+      this.draw();
+    }
+  }
+
+class Fighter {
     constructor({ position, velocity, color = "red", offset }) {
       this.position = position;
       this.velocity = velocity;
@@ -53,19 +67,5 @@ class Sprite {
       setTimeout(() => {
         this.isAttacking = false;
       }, 100);
-    }
-  }
-  
-  class Fighter {
-    constructor({ position }) {
-      this.position = position;
-      this.width = 50;
-      this.height = 150;
-    }
-  
-    draw() {}
-  
-    update() {
-      this.draw();
     }
   }
