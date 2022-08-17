@@ -18,11 +18,12 @@ const background = new Sprite({
 
 const shop = new Sprite({
   position: {
-    x: 600,
+    x: 625,
     y: 128
   },
   imageSrc: './img/shop.png',
-  scale: 2.75
+  scale: 2.75,
+  framesMax: 6
 })
 
 const player = new Fighter({
