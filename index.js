@@ -66,6 +66,20 @@ class Sprite {
   }
 }
 
+class Fighter {
+  constructor({ position }) {
+    this.position = position;
+    this.width = 50;
+    this.height = 150;
+  }
+
+  draw() {}
+
+  update() {
+    this.draw();
+  }
+}
+
 const player = new Sprite({
   position: {
     x: 0,
