@@ -200,7 +200,7 @@ function animate() {
     enemy.isAttacking
   ) {
     enemy.isAttacking = false;
-    player.heatlh -= 20;
+    player.health -= 20;
     document.querySelector("#playerHealth").style.width = player.health + "%";
   }
 
