@@ -54,6 +54,10 @@ const player = new Fighter({
     run: {
       imageSrc: './img/Samurai1/Sprites/Run.png',
       frameMax: 8,
+    },
+    jump: {
+      imageSrc: './img/Samurai1/Sprites/Jump.png',
+      frameMax: 2,
     }
   }
 });
