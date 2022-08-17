@@ -33,7 +33,7 @@ class Sprite {
     );
   }
 
-animateFrames() {
+  animateFrames() {
     this.framesElapsed++;
 
     if (this.framesElapsed % this.framesHold === 0) {
@@ -43,7 +43,7 @@ animateFrames() {
         this.framesCurrent = 0;
       }
     }
-}
+  }
 
   update() {
     this.draw();
@@ -59,14 +59,15 @@ class Fighter extends Sprite {
     imageSrc,
     scale = 1,
     framesMax = 1,
-    offset = { x: 0, y: 0 }
+    offset = { x: 0, y: 0 },
+    sprites,
   }) {
     super({
       position,
       imageSrc,
       scale,
       framesMax,
-      offset
+      offset,
     });
 
     this.velocity = velocity;
@@ -87,25 +88,16 @@ class Fighter extends Sprite {
     this.health = 100;
     this.framesCurrent = 0;
     this.framesElapsed = 0;
-    this.framesHold = 9;
+    this.framesHold = 6;
+    this.sprites = sprites;
+
+    for (const sprite in this.sprites) {
+        sprites[sprite].image = new Image();
+        sprites[sprite].image.src = sprites[sprite].imageSrc
+
+    }
+    console.log(this.sprites);
   }
-
-  //rectangle placeholders
-  //   draw() {
-  //     c.fillStyle = this.color;
-  //     c.fillRect(this.position.x, this.position.y, this.width, this.height);
-
-  // attack box
-  //     if (this.isAttacking) {
-  //       c.fillStyle = "green";
-  //       c.fillRect(
-  //         this.attackBox.position.x,
-  //         this.attackBox.position.y,
-  //         this.attackBox.width,
-  //         this.attackBox.height
-  //       );
-  //     }
-  //   }
 
   update() {
     this.draw();
