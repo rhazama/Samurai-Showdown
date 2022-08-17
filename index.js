@@ -26,6 +26,7 @@ class Sprite {
     };
     this.color = color;
     this.isAttacking;
+    this.health = 100;
   }
 
   draw() {
@@ -129,7 +130,7 @@ function determineWinner({player, enemy, timerId }) {
   clearTimeout(timerId);
   document.querySelector('#displayText').style.display = 'flex';
 
-  if (player.Health === enemy.health) {
+  if (player.health === enemy.health) {
     document.querySelector('#displayText').innerHTML = 'Tie';
   } else if (player.health > enemy.health) {
     document.querySelector('#displayText').innerHTML = 'Player 1 Wins';
