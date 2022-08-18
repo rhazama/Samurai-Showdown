@@ -1,3 +1,4 @@
+// players attack
 function rectangularCollision({ rectangle1, rectangle2 }) {
   return (
     rectangle1.attackBox.position.x + rectangle1.attackBox.width >=
@@ -10,6 +11,7 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
   );
 }
 
+// determine winner
 function determineWinner({ player, enemy, timerId }) {
   clearTimeout(timerId);
   document.querySelector("#displayText").style.display = "flex";
@@ -23,8 +25,10 @@ function determineWinner({ player, enemy, timerId }) {
   }
 }
 
+// timer countdown
 let timer = 60;
 let timerId;
+
 function decreaseTimer() {
   if (timer > 0) {
     timerId = setTimeout(decreaseTimer, 1000);
