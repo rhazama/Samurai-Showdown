@@ -92,9 +92,8 @@ class Fighter extends Sprite {
     this.sprites = sprites;
 
     for (const sprite in this.sprites) {
-        sprites[sprite].image = new Image();
-        sprites[sprite].image.src = sprites[sprite].imageSrc
-
+      sprites[sprite].image = new Image();
+      sprites[sprite].image.src = sprites[sprite].imageSrc;
     }
     console.log(this.sprites);
   }
@@ -123,13 +122,21 @@ class Fighter extends Sprite {
 
   switchSprite(sprite) {
     switch (sprite) {
-        case 'idle' :
-            this.image = this.sprites.idle.image
-            break;
-        case 'run' :
-            break;
-        case 'jump' :
-            break;
+      case "idle":
+        if (this.image !== this.sprites.idle.image)
+          this.image = this.sprites.idle.image;
+        this.framesMax = this.sprites.idle.framesMax;
+        break;
+      case "run":
+        if (this.image !== this.sprites.run.image)
+          this.image = this.sprites.run.image;
+        this.framesMax = this.sprites.run.framesMax;
+        break;
+      case "jump":
+        if (this.image !== this.sprites.jump.image)
+          this.image = this.sprites.jump.image;
+        this.framesMax = this.sprites.jump.framesMax;
+        break;
     }
   }
 }

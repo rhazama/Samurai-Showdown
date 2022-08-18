@@ -11,20 +11,20 @@ const gravity = 0.7;
 const background = new Sprite({
   position: {
     x: 0,
-    y: 0
+    y: 0,
   },
-  imageSrc: './img/background.png',
-})
+  imageSrc: "./img/background.png",
+});
 
 const shop = new Sprite({
   position: {
     x: 625,
-    y: 128
+    y: 128,
   },
-  imageSrc: './img/shop.png',
+  imageSrc: "./img/shop.png",
   scale: 2.75,
-  framesMax: 6
-})
+  framesMax: 6,
+});
 
 const player = new Fighter({
   position: {
@@ -39,27 +39,27 @@ const player = new Fighter({
     x: 0,
     y: 0,
   },
-  imageSrc: './img/Samurai1/Sprites/Idle.png',
+  imageSrc: "./img/Samurai1/Sprites/Idle.png",
   framesMax: 8,
   scale: 2.5,
   offset: {
     x: 215,
-    y: 157
+    y: 157,
   },
   sprites: {
     idle: {
-      imageSrc: './img/Samurai1/Sprites/Idle.png',
-      frameMax: 8
+      imageSrc: "./img/Samurai1/Sprites/Idle.png",
+      frameMax: 8,
     },
     run: {
-      imageSrc: './img/Samurai1/Sprites/Run.png',
+      imageSrc: "./img/Samurai1/Sprites/Run.png",
       frameMax: 8,
     },
     jump: {
-      imageSrc: './img/Samurai1/Sprites/Jump.png',
+      imageSrc: "./img/Samurai1/Sprites/Jump.png",
       frameMax: 2,
-    }
-  }
+    },
+  },
 });
 
 const enemy = new Fighter({
@@ -110,18 +110,17 @@ function animate() {
   enemy.velocity.x = 0;
 
   // player movement
-  player.switchSprite('idle')
+  player.switchSprite("idle");
   if (keys.a.pressed && player.lastKey === "a") {
     player.velocity.x = -5;
-    player.image = player.sprites.run.image;
+    player.switchSprite("run");
   } else if (keys.d.pressed && player.lastKey === "d") {
     player.velocity.x = 5;
-    player.image = player.sprites.run.image;
+    player.switchSprite("run");
   }
 
   if (player.velocity.y < 0) {
-    player.image = player.sprites.jump.image;
-    player.framesMax = player.sprites.jump.framesMax;
+    player.switchSprite("jump");
   }
 
   // enemy movement
@@ -158,7 +157,7 @@ function animate() {
 
   // end game based on health
   if (enemy.health <= 0 || player.health <= 0) {
-    determineWinner({ player, enemy, timerId })
+    determineWinner({ player, enemy, timerId });
   }
 }
 
