@@ -125,8 +125,11 @@ function animate() {
     player.switchSprite("idle");
   }
 
+  // jumping
   if (player.velocity.y < 0) {
     player.switchSprite("jump");
+  } else if (player.velocity.y > 0) {
+    player.switchSprite("fall");
   }
 
   // enemy movement
