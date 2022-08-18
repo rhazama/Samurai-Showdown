@@ -59,6 +59,10 @@ const player = new Fighter({
       imageSrc: "./img/Samurai1/Sprites/Jump.png",
       frameMax: 2,
     },
+    fall: {
+      imageSrc: "./img/Samurai1/Sprites/Fall.png",
+      frameMax: 2,
+    },
   },
 });
 
@@ -110,13 +114,15 @@ function animate() {
   enemy.velocity.x = 0;
 
   // player movement
-  player.switchSprite("idle");
+  
   if (keys.a.pressed && player.lastKey === "a") {
     player.velocity.x = -5;
     player.switchSprite("run");
   } else if (keys.d.pressed && player.lastKey === "d") {
     player.velocity.x = 5;
     player.switchSprite("run");
+  } else {   
+    player.switchSprite("idle");
   }
 
   if (player.velocity.y < 0) {
