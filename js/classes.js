@@ -88,7 +88,7 @@ class Fighter extends Sprite {
     this.health = 100;
     this.framesCurrent = 0;
     this.framesElapsed = 0;
-    this.framesHold = 6;
+    this.framesHold = 5;
     this.sprites = sprites;
 
     for (const sprite in this.sprites) {
@@ -110,6 +110,7 @@ class Fighter extends Sprite {
     // gravity function
     if (this.position.y + this.height + this.velocity.y >= canvas.height - 96) {
       this.velocity.y = 0;
+      this.position.y = 330;
     } else this.velocity.y += gravity;
   }
 
