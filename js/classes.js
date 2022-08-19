@@ -15,7 +15,7 @@ class Sprite {
     this.framesMax = framesMax;
     this.framesCurrent = 0;
     this.framesElapsed = 0;
-    this.framesHold = 9;
+    this.framesHold = 5;
     this.offset = offset;
   }
 
@@ -30,7 +30,7 @@ class Sprite {
       this.position.y - this.offset.y,
       (this.image.width / this.framesMax) * this.scale,
       this.image.height * this.scale
-    );
+    )
   }
 
   animateFrames() {
@@ -60,14 +60,14 @@ class Fighter extends Sprite {
     scale = 1,
     framesMax = 1,
     offset = { x: 0, y: 0 },
-    sprites,
+    sprites
   }) {
     super({
       position,
       imageSrc,
       scale,
       framesMax,
-      offset,
+      offset
     });
 
     this.velocity = velocity;
@@ -102,7 +102,7 @@ class Fighter extends Sprite {
     this.animateFrames();
 
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
-    this.attackBox.position.y = this.position.y;
+    this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
 
     this.position.x += this.velocity.x;
     this.position.y += this.velocity.y;
