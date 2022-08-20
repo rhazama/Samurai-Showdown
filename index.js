@@ -84,6 +84,35 @@ const enemy = new Fighter({
     x: -50,
     y: 0,
   },
+  imageSrc: "./img/Samurai2/Idle.png",
+  framesMax: 8,
+  scale: 2.5,
+  offset: {
+    x: 215,
+    y: 157,
+  },
+  sprites: {
+    idle: {
+      imageSrc: "./img/Samurai2/Idle.png",
+      frameMax: 8,
+    },
+    run: {
+      imageSrc: "./img/Samurai2/Run.png",
+      frameMax: 8,
+    },
+    jump: {
+      imageSrc: "./img/Samurai2/Jump.png",
+      frameMax: 2,
+    },
+    fall: {
+      imageSrc: "./img/Samurai2/Fall.png",
+      frameMax: 2,
+    },
+    attack1: {
+      imageSrc: "./img/Samurai2/attack1.png",
+      frameMax: 6,
+    },
+  },
 });
 
 console.log(player);
