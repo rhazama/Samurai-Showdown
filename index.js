@@ -212,7 +212,6 @@ function animate() {
     document.querySelector("#enemyHealth").style.width = enemy.health + "%";
   }
 
-
   // if player misses 
   if (player.isAttacking && player.framesCurrent === 4) {
     player.isAttacking = false
@@ -228,6 +227,11 @@ function animate() {
     enemy.isAttacking = false;
     player.health -= 20;
     document.querySelector("#playerHealth").style.width = player.health + "%";
+  }
+
+  // if enemy misses 
+  if (enemy.isAttacking && enemy.framesCurrent === 2) {
+    enemy.isAttacking = false
   }
 
   // end game based on health
