@@ -73,7 +73,7 @@ const player = new Fighter({
       x: 100,
       y: 0
     },
-    width: 100,
+    width: 160,
     height: 50
   }
 });
@@ -157,7 +157,7 @@ function animate() {
   background.update();
   shop.update();
   player.update();
-  // enemy.update();
+  enemy.update();
 
   player.velocity.x = 0;
   enemy.velocity.x = 0;
