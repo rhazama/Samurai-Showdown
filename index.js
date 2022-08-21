@@ -68,6 +68,14 @@ const player = new Fighter({
       frameMax: 6,
     },
   },
+  attackBox: {
+    offset: {
+      x: 100,
+      y: 0
+    },
+    width: 100,
+    height: 50
+  }
 });
 
 const enemy = new Fighter({
@@ -113,6 +121,14 @@ const enemy = new Fighter({
       frameMax: 6,
     },
   },
+  attackBox: {
+    offset: {
+      x: 0,
+      y: 0
+    },
+    width: 100,
+    height: 50
+  }
 });
 
 console.log(player);
