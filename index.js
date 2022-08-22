@@ -73,7 +73,7 @@ const player = new Fighter({
     },
     death: {
       imageSrc: "./img/Samurai1/Death.png",
-      frameMax: 4,
+      frameMax: 6,
     }
   },
   attackBox: {
@@ -134,7 +134,7 @@ const enemy = new Fighter({
     },
     death: {
       imageSrc: "./img/Samurai2/Death.png",
-      frameMax: 4,
+      frameMax: 7,
     }
   },
   attackBox: {
