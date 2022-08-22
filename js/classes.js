@@ -129,6 +129,11 @@ class Fighter extends Sprite {
     this.isAttacking = true;
   }
 
+  takeHit() {
+    this.switchSprite('takeHit')
+    this.health -= 20
+  }
+
   switchSprite(sprite) {
     if (
       this.image === this.sprites.idle.image &&
