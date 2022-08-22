@@ -192,7 +192,7 @@ class Fighter extends Sprite {
           this.framesCurrent = 0;
         }
         break;
-      case "takeHit":
+      case "death":
         if (this.image !== this.sprites.death.image) {
           this.image = this.sprites.death.image;
           this.framesMax = this.sprites.death.framesMax;
