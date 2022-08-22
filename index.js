@@ -67,6 +67,10 @@ const player = new Fighter({
       imageSrc: "./img/Samurai1/attack1.png",
       frameMax: 6,
     },
+    takeHit: {
+      imageSrc: "./img/Samurai1/TakeHit.png",
+      frameMax: 3,
+    },
   },
   attackBox: {
     offset: {
@@ -120,6 +124,10 @@ const enemy = new Fighter({
       imageSrc: "./img/Samurai2/attack1.png",
       frameMax: 6,
     },
+    takeHit: {
+      imageSrc: "./img/Samurai2/TakeHit.png",
+      frameMax: 3,
+    }
   },
   attackBox: {
     offset: {
