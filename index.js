@@ -131,7 +131,7 @@ const enemy = new Fighter({
     takeHit: {
       imageSrc: "./img/Samurai2/TakeHit.png",
       frameMax: 3,
-    }
+    },
     death: {
       imageSrc: "./img/Samurai2/Death.png",
       frameMax: 4,
