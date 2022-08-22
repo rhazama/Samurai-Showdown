@@ -68,7 +68,11 @@ const player = new Fighter({
       frameMax: 6,
     },
     takeHit: {
-      imageSrc: "./img/Samurai2/Take Hit - white silhouette.png",
+      imageSrc: "./img/Samurai1/Take Hit - white silhouette.png",
+      frameMax: 4,
+    },
+    death: {
+      imageSrc: "./img/Samurai1/Death.png",
       frameMax: 4,
     }
   },
@@ -127,6 +131,10 @@ const enemy = new Fighter({
     takeHit: {
       imageSrc: "./img/Samurai2/TakeHit.png",
       frameMax: 3,
+    }
+    death: {
+      imageSrc: "./img/Samurai2/Death.png",
+      frameMax: 4,
     }
   },
   attackBox: {
