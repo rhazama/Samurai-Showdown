@@ -30,7 +30,7 @@ class Sprite {
       this.position.y - this.offset.y,
       (this.image.width / this.framesMax) * this.scale,
       this.image.height * this.scale
-    );
+    )
   }
 
   animateFrames() {
@@ -146,7 +146,7 @@ class Fighter extends Sprite {
       return;
     }
 
-    //overriding all other animations with the attack animation
+    // override all other animations with the attack animation
     if (
       this.image === this.sprites.attack1.image &&
       this.framesCurrent < this.sprites.attack1.framesMax - 1
