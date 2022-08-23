@@ -91,6 +91,7 @@ class Fighter extends Sprite {
     this.framesElapsed = 0;
     this.framesHold = 5;
     this.sprites = sprites;
+    this.dead = false;
 
     for (const sprite in this.sprites) {
       sprites[sprite].image = new Image();
@@ -100,6 +101,7 @@ class Fighter extends Sprite {
 
   update() {
     this.draw();
+    if (!this.dead) this.animateFrames();
     this.animateFrames();
 
     // attack boxes
