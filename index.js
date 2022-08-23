@@ -64,7 +64,7 @@ const player = new Fighter({
       frameMax: 2,
     },
     attack1: {
-      imageSrc: "./img/Samurai1/attack1.png",
+      imageSrc: "./img/Samurai1/Attack1.png",
       frameMax: 6,
     },
     takeHit: {
@@ -79,7 +79,7 @@ const player = new Fighter({
   attackBox: {
     offset: {
       x: 100,
-      y: 0,
+      y: 50,
     },
     width: 160,
     height: 50,
@@ -101,7 +101,7 @@ const enemy = new Fighter({
     y: 0,
   },
   imageSrc: "./img/Samurai2/Idle.png",
-  framesMax: 8,
+  framesMax: 4,
   scale: 2.5,
   offset: {
     x: 215,
@@ -110,7 +110,7 @@ const enemy = new Fighter({
   sprites: {
     idle: {
       imageSrc: "./img/Samurai2/Idle.png",
-      frameMax: 8,
+      frameMax: 4,
     },
     run: {
       imageSrc: "./img/Samurai2/Run.png",
@@ -125,8 +125,8 @@ const enemy = new Fighter({
       frameMax: 2,
     },
     attack1: {
-      imageSrc: "./img/Samurai2/attack1.png",
-      frameMax: 6,
+      imageSrc: "./img/Samurai2/Attack1.png",
+      frameMax: 4,
     },
     takeHit: {
       imageSrc: "./img/Samurai2/TakeHit.png",
@@ -161,7 +161,7 @@ const keys = {
   },
   ArrowLeft: {
     pressed: false,
-  },
+  }
 };
 
 decreaseTimer();
@@ -172,7 +172,7 @@ function animate() {
   c.fillRect(0, 0, canvas.width, canvas.height);
   background.update();
   shop.update();
-  c.fillStyle = "rgba(255, 255, 255, 0.2)";
+  c.fillStyle = "rgba(255, 255, 255, 0.15)";
   c.fillRect(0, 0, canvas.width, canvas.height);
   player.update();
   enemy.update();
@@ -252,7 +252,8 @@ function animate() {
 
     gsap.to('#playerHealth', {
       width: player.health + "%"
-    })  }
+    });  
+  }
 
   // if enemy misses
   if (enemy.isAttacking && enemy.framesCurrent === 2) {
@@ -286,6 +287,7 @@ window.addEventListener("keydown", (event) => {
         break;
     }
   }
+
   if (!enemy.dead) {
     switch (event.key) {
       case "ArrowRight":
@@ -316,6 +318,7 @@ window.addEventListener("keyup", (event) => {
       break;
   }
 
+  // enemy keys
   switch (event.key) {
     case "ArrowRight":
       keys.ArrowRight.pressed = false;
@@ -324,6 +327,4 @@ window.addEventListener("keyup", (event) => {
       keys.ArrowLeft.pressed = false;
       break;
   }
-
-  console.log(event.key);
 });
