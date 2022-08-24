@@ -49,31 +49,31 @@ const player = new Fighter({
   sprites: {
     idle: {
       imageSrc: "./img/Samurai1/Idle.png",
-      frameMax: 8,
+      framesMax: 8,
     },
     run: {
       imageSrc: "./img/Samurai1/Run.png",
-      frameMax: 8,
+      framesMax: 8,
     },
     jump: {
       imageSrc: "./img/Samurai1/Jump.png",
-      frameMax: 2,
+      framesMax: 2,
     },
     fall: {
       imageSrc: "./img/Samurai1/Fall.png",
-      frameMax: 2,
+      framesMax: 2,
     },
     attack1: {
       imageSrc: "./img/Samurai1/Attack1.png",
-      frameMax: 6,
+      framesMax: 6,
     },
     takeHit: {
       imageSrc: "./img/Samurai1/Take Hit - white silhouette.png",
-      frameMax: 4,
+      framesMax: 4,
     },
     death: {
       imageSrc: "./img/Samurai1/Death.png",
-      frameMax: 6,
+      framesMax: 6,
     },
   },
   attackBox: {
@@ -110,31 +110,31 @@ const enemy = new Fighter({
   sprites: {
     idle: {
       imageSrc: "./img/Samurai2/Idle.png",
-      frameMax: 4,
+      framesMax: 4,
     },
     run: {
       imageSrc: "./img/Samurai2/Run.png",
-      frameMax: 8,
+      framesMax: 8,
     },
     jump: {
       imageSrc: "./img/Samurai2/Jump.png",
-      frameMax: 2,
+      framesMax: 2,
     },
     fall: {
       imageSrc: "./img/Samurai2/Fall.png",
-      frameMax: 2,
+      framesMax: 2,
     },
     attack1: {
       imageSrc: "./img/Samurai2/Attack1.png",
-      frameMax: 4,
+      framesMax: 4,
     },
     takeHit: {
       imageSrc: "./img/Samurai2/TakeHit.png",
-      frameMax: 3,
+      framesMax: 3,
     },
     death: {
       imageSrc: "./img/Samurai2/Death.png",
-      frameMax: 7,
+      framesMax: 7,
     },
   },
   attackBox: {
@@ -229,7 +229,7 @@ function animate() {
     player.isAttacking = false;
 
     gsap.to("#enemyHealth", {
-      width: enemy.health + "%",
+      width: enemy.health + "%"
     });
   }
 
@@ -250,9 +250,9 @@ function animate() {
     player.takeHit();
     enemy.isAttacking = false;
 
-    gsap.to("#playerHealth", {
-      width: player.health + "%",
-    });
+    gsap.to('#playerHealth', {
+      width: player.health + "%"
+    })
   }
 
   // if player misses
