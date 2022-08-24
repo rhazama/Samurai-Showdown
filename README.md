@@ -35,4 +35,4 @@ This application is covered by the MIT license.
 Ryan Hazama
 ## Questions
 Find me on GitHub: [rhazama](https://github.com/rhazama)<br />
-Send any questions you may have to: rhazam01@gmail.com<br />
+Send any questions you may have to: rhazama01@gmail.com<br />
