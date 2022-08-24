@@ -161,7 +161,7 @@ const keys = {
   },
   ArrowLeft: {
     pressed: false,
-  }
+  },
 };
 
 decreaseTimer();
@@ -228,9 +228,9 @@ function animate() {
     enemy.takeHit();
     player.isAttacking = false;
 
-    gsap.to('#enemyHealth', {
-      width: enemy.health + "%"
-    })
+    gsap.to("#enemyHealth", {
+      width: enemy.health + "%",
+    });
   }
 
   // if player misses
@@ -250,12 +250,12 @@ function animate() {
     player.takeHit();
     enemy.isAttacking = false;
 
-    gsap.to('#playerHealth', {
-      width: player.health + "%"
-    });  
+    gsap.to("#playerHealth", {
+      width: player.health + "%",
+    });
   }
 
-  // if enemy misses
+  // if player misses
   if (enemy.isAttacking && enemy.framesCurrent === 2) {
     enemy.isAttacking = false;
   }
