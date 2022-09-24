@@ -2,6 +2,9 @@
 <h1 align="center">Samurai Showdown </h1>
 
 ![badge](https://img.shields.io/badge/license-MIT-brightgreen)<br />
+
+<img width="1276" alt="Screen Shot 2022-09-24 at 4 06 20 PM" src="https://user-images.githubusercontent.com/88352747/192121681-efb0a416-d372-488d-997a-d705b952d9b4.png">
+
 ## Description
 A 2 player 2D gaming application that allows players to battle it out through Samurai warriors to the last one standing.</br>
 </br>
