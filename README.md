@@ -1,5 +1,5 @@
 
-<h1 align="center">Samurai Showdown </h1>
+:crossed_swords: <h1 align="center">Samurai Showdown </h1> :crossed_swords:
 
 ![badge](https://img.shields.io/badge/license-MIT-brightgreen)<br />
 
